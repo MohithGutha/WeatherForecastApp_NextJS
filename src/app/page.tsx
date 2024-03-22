@@ -253,8 +253,10 @@ export default function Home() {
             <ForecastWeatherDetails
               key={i}
               weatherIcon = {d?.weather[0].icon ?? "01d"}
-              date = {format(parseISO(d?.dt_txt ?? ""), "LLL dd")}
-              day = {format(parseISO(d?.dt_txt ?? ""), "EEEE")}
+              // date = {format(parseISO(d?.dt_txt ?? ""), "LLL dd")}
+              date = {d?.dt_txt ? format(parseISO(d?.dt_txt ?? ""), "LLL dd") : ""}
+              // day = {format(parseISO(d?.dt_txt ?? ""), "EEEE")}
+              day = {d?.dt_txt ? format(parseISO(d?.dt_txt ?? ""), "EEEE") : ""}
               temp = {d?.main.temp ?? 273.15}
               feels_like = {d?.main.feels_like ?? 273.15}
               temp_min = {d?.main.temp_min ?? 263.15}
